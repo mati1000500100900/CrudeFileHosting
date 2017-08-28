@@ -1,0 +1,24 @@
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+}
+table td.shrink {
+	text-align:right;
+    white-space:nowrap
+}
+table td.expand {
+    width: 99%;
+	padding-left:10px;
+}
+.overflow{
+	overflow:hidden;
+}
+.icon{
+	position:relative;
+	height:80px;
+	width:80px;
+}

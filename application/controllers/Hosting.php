@@ -4,6 +4,7 @@ class Hosting extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('Files_model');
+		$this->load->helper('ext_helper');
 	}
 
 	public function index(){

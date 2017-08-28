@@ -7,7 +7,7 @@
 					<table>
 						<tr>
 							<td class='shrink'>
-								<img src='{base_url()}ext/{pathinfo($row->src, 4)|lower}.png' class='icon'>
+								<img src='{base_url()}ext/{ext_test(pathinfo($row->src, 4))}.png' alt='icon' class='icon'>
 							</td>
 							<td> </td>
 							<td class='expand'>
@@ -29,7 +29,6 @@
 							</td>
 						</tr>
 					</table>
-					
 				</div>
 			</div>
 		</div>

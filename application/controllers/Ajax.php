@@ -12,13 +12,12 @@ class Ajax extends CI_Controller {
 			if($this->Files_model->deletefile($this->input->post('id'),$this->input->post('pass'))){
 				echo json_encode(array('success' => 'delete'));
 			}
-			else echo json_encode(array('error' => 'acces denied'));
+			else echo json_encode(array('error' => 'denied'));
 		}
 		else echo json_encode(array('error' => 'POST'));
 	}
 	
 	public function download(){
-		
 		if(isset($_POST['id']) && isset($_POST['pass'])){
 			$response = $this->Files_model->downloadfile($this->input->post('id'),$this->input->post('pass'));
 			if($response){
@@ -26,7 +25,7 @@ class Ajax extends CI_Controller {
 			}
 			else {
 				header('Content-Type: application/json');
-				echo json_encode(array('error' => 'POST'));
+				echo json_encode(array('error' => 'denied'));
 			}
 		}
 		else {

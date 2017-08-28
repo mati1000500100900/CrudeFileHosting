@@ -1,11 +1,10 @@
 {extends file='main.tpl'}
-{block name=body nocache}
+{block name=body}
 	<div class='container'>
 		<form method='post' action='{base_url()}add' enctype='multipart/form-data'>
 			<div class='panel panel-default' >
-				<div class='panel-heading'>Add new file (max size: {ini_get('upload_max_filesize')}) {$alert}</div>
+				<div class='panel-heading'>Add new file (max size: {ini_get('upload_max_filesize')}B) {$alert nocache}</div>
 				<div class='panel-body'>
-					
 					<div class="form-group">	
 						<input type='file' class="form-control-file" name='file0'><br>
 					</div>

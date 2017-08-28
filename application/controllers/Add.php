@@ -13,7 +13,6 @@ class Add extends CI_Controller {
 			$config['file_name']			= $this->Files_model->getrandomstring(16);
 			$config['upload_path']          = './files/';
 			$config['allowed_types']        = '*';
-			//$config['allowed_types']        = 'aac|aiff|avi|bmp|cpp|css|csv|dat|dmg|doc|docx|dotx|dwg|exe|flv|gif|html|iso|java|jpg|js|less|mid|mp3|mp4|mpg|pde|pdf|php|png|ppt|pptx|psd|py|rar|rtf|sql|tgz|tiff|txt|wav|xls|xlsx|xml|yml|zip';
 			$config['max_size']             = 10240;
 
 			$this->load->library('upload', $config);
