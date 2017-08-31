@@ -7,15 +7,19 @@
 					<table>
 						<tr>
 							<td class='shrink'>
-								<img src='{base_url()}ext/{ext_test(pathinfo($row->src, 4))}.png' alt='icon' class='icon'>
+								{if $row->isimage && $row->pass == NULL}
+									<img onClick='preview("{$row->src}")' style='background-image:url("{base_url()}files/{$row->src}");' class='ratio'>
+								{else}
+									<img src='{base_url()}ext/{ext_test(pathinfo($row->src, 4))}.png' alt='icon' class='icon'>
+								{/if}
 							</td>
 							<td> </td>
 							<td class='expand'>
 								<div class='overflow'>
-									name: {$row->name}<br>
-									size: {$row->size}KB<br>
-									added: {$row->time}<br>
-									protected: {if $row->pass == NULL}no{else}yes{/if} 
+									Nazwa: {wordwrap($row->name,8,'<wbr>',true)}<br>
+									Rozmiar: {$row->size}KB<br>
+									Dodano: {$row->time}<br>
+									Hasło: {if $row->pass == NULL}Nie{else}Tak{/if} 
 								</div>
 							</td>
 							<td>

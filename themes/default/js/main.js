@@ -11,7 +11,7 @@ function deleteFile(x){
 					dataType: 'json',
 					success: function (message) {
 						if(message.error){
-							alert(message.error);
+							bootbox.dialog({ message: 'Error', size: 'small', backdrop: true, onEscape: true });
 						}
 						if(message.success){
 							if(message.success=="delete"){
@@ -37,8 +37,8 @@ function deleteProtectedFile(x){
 					data: {id: x, pass: result},
 					dataType: 'json',
 					success: function (message) {
-						if(message.error){
-							alert(message.error);
+						if(message.error=='denied'){
+							bootbox.dialog({ message: 'Acces denied', size: 'small', backdrop: true, onEscape: true });
 						}
 						if(message.success){
 							if(message.success=="delete"){
@@ -68,8 +68,8 @@ function downloadProtectedFile(x){
 					data: {id: x, pass: result},
 					dataType: 'json',
 					success: function (message) {
-						if(message.error){
-							alert(message.error);
+						if(message.error=='denied'){
+							bootbox.dialog({ message: 'Acces denied', size: 'small', backdrop: true, onEscape: true });
 						}
 						if(message.success){
 							downloadFile(message.src,message.name);
@@ -79,4 +79,8 @@ function downloadProtectedFile(x){
 			}
 		}
 	});
+}
+
+function preview(x){
+	bootbox.dialog({ message: '<img src="/files/'+x+'" width="100%">', backdrop: true, onEscape: true });
 }
