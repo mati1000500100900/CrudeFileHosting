@@ -8,7 +8,7 @@ class Add extends CI_Controller {
 
 	public function index(){
 		if(!empty($_FILES)){
-			$originalname=$_FILES['file0']['name'];
+			$originalName=$_FILES['file0']['name'];
 			
 			$config['file_name']			= $this->Files_model->getrandomstring(16);
 			$config['upload_path']          = './files/';
@@ -30,7 +30,7 @@ class Add extends CI_Controller {
 					$hash=password_hash($this->input->post('pass'),PASSWORD_BCRYPT,array('cost'=>12));
 				}
 				else $hash=NULL;
-				$this->Files_model->newfile($originalname,$this->upload->data('file_name'),$this->upload->data('file_size'),$this->upload->data('is_image'),$ip,$hash);
+				$this->Files_model->newfile($originalName,$this->upload->data('file_name'),$this->upload->data('file_size'),$this->upload->data('is_image'),$ip,$hash);
 				$this->parser->parse('add');
 				redirect('/');
 			}
