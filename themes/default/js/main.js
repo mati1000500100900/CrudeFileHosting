@@ -14,7 +14,7 @@ function deleteFile(x){
 							bootbox.dialog({ message: 'Error', size: 'small', backdrop: true, onEscape: true });
 						}
 						if(message.success){
-							if(message.success=="delete"){
+							if(message.success==="delete"){
 								$('#file'+x).hide(500);
 							}	
 						}
@@ -37,11 +37,11 @@ function deleteProtectedFile(x){
 					data: {id: x, pass: result},
 					dataType: 'json',
 					success: function (message) {
-						if(message.error=='denied'){
+						if(message.error==='denied'){
 							bootbox.dialog({ message: 'Acces denied', size: 'small', backdrop: true, onEscape: true });
 						}
 						if(message.success){
-							if(message.success=="delete"){
+							if(message.success==="delete"){
 								$('#file'+x).hide(500);
 							}	
 						}
@@ -68,7 +68,7 @@ function downloadProtectedFile(x){
 					data: {id: x, pass: result},
 					dataType: 'json',
 					success: function (message) {
-						if(message.error=='denied'){
+						if(message.error==='denied'){
 							bootbox.dialog({ message: 'Acces denied', size: 'small', backdrop: true, onEscape: true });
 						}
 						if(message.success){
